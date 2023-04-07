@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ImagineAI</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <div class="navbar-logo">
+          <img src="assets/logo.png" alt="Your Logo" height="40" width="40" />
+        </div>
+        <button class="navbar-button" id="logo-image">ImagineAI</button>
+      </div>
+      <div class="navbar-buttons">
+        <button class="navbar-button">Generate Image</button>
+        <button class="navbar-button">Edit Image</button>
+        <button class="navbar-button">Image Variant</button>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search..." />
+      <button class="search-button">Generate</button>
+      <button class="surprise-button">Surprise Me</button>
+    </div>
+    <div class="gallery-contianer">
+      <div class="gallery" id="gallery"></div>
+    </div>
+    <script src="scripts.js"></script>
+    
+  </body>
+</html>
