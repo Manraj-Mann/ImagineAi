@@ -92,7 +92,6 @@ body {
   font-size: 20px;
 }
 
-
 img {
   max-width: 100%;
   display: block;
@@ -134,10 +133,9 @@ img {
   position: relative;
 }
 
-
-
 .gallery-item:hover img {
   scale: 1.05;
+  color: white;
   filter: blur(3px);
 }
 
@@ -153,9 +151,8 @@ img {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  color: white;
   scale: 1.05;
-  
-
 }
 
 .text-overlay::before {
@@ -165,12 +162,14 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.373);
+  color: white;
+  
 }
 
 .gallery-item:hover .text-overlay {
+  color: white;
   opacity: 1;
-  
 }
 
 .text-overlay p {
@@ -180,4 +179,79 @@ img {
   text-align: center;
   margin: 0;
   width: 80%;
+}
+
+.popup-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: fit-content;
+  overflow: auto;
+  background-color: whitesmoke;
+  border-radius: 14px;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  
+}
+.popup-card img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.popup-prompt {
+  color: #000000aa;
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 500px;
+  max-height: 500px;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.popup-card button {
+  color: rgba(0, 0, 0, 0.821);
+  background-color: #ececf1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  width: 75%;
+  font-weight: 600;
+  letter-spacing: 1px;
+   font-family: Helvetica, sans-serif;
+  
+  
+}
+.popup-card button:hover {
+  background-color: #ececf1c2;
+}
+
+.popup-active .gallery-item {
+  filter: none;
+  transform: none;
+  /* other rules to disable the effects */
+}
+
+.popup-active .text-overlay {
+  display: none;
+  /* other rules to disable the effects */
 }
