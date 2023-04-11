@@ -10,13 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap"
       rel="stylesheet"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@500&display=swap"
       rel="stylesheet"
     />
+    <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
   </head>
-  <body  >
+  <body>
     <div class="navbar">
       <div class="navbar-left">
         <div class="navbar-logo">
@@ -32,21 +35,27 @@
     </div>
 
     <div class="search-container">
-      <input type="text" class="search-input" id="search-input" placeholder="Search..." />
-      <button class="search-button">Generate</button>
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="Search..."
+      />
+      <button class="search-button" onclick="generate()">Generate</button>
       <button class="surprise-button">Surprise Me</button>
     </div>
     <div class="gallery-contianer">
       <div class="gallery" id="gallery"></div>
     </div>
-    <script src="scripts.js">
-    </script>
-
+    <script src="scripts.js"></script>
+    
     <!-- <div id="popup-card" class="popup-card">
       <img id="popup-image" src="" alt="Popup Image" />
       <div id="popup-prompt" class="popup-prompt"></div>
       <button onclick="hideCard()">Close</button>
     </div> -->
+
+    
 
     <div id="popup-card" class="popup-card">
       <div class="popup-content">
@@ -55,6 +64,7 @@
         <button onclick="trynow()">Try Example !</button>
       </div>
     </div>
-  
+    
   </body>
+
 </html>

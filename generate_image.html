@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="script2.js"></script>
+    <title>ImagineAI</title>
+
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="import"
+      href="../bower_components/iron-selector/iron-selector.html"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <div class="navbar-logo">
+          <img src="assets/logo.png" alt="Your Logo" height="40" width="40" />
+        </div>
+        <button class="navbar-button" id="logo-image">ImagineAI</button>
+      </div>
+      <div class="navbar-buttons">
+        <button class="navbar-button">Generate Image</button>
+        <button class="navbar-button">Edit Image</button>
+        <button class="navbar-button">Image Variant</button>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="Search..."
+      />
+      <button class="search-button" onclick="generate()">Generate</button>
+      <button class="surprise-button">Surprise Me</button>
+    </div>
+
+    
+
+    <div id="loading-container">
+      <div id="loading-screen">
+        <div class="spinner"></div>
+        <p id="loader">Imagining</p>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="grid-container">
+        <div class="grid-item" onclick="showCard(this)">
+          <img id="item1" src="assets/loader.gif" />
+        </div>
+        <div class="grid-item" onclick="showCard(this)">
+          <img id="item2" src="assets/loader.gif" />
+        </div>
+        <div class="grid-item" onclick="showCard(this)">
+          <img id="item3" src="assets/loader.gif" />
+        </div>
+        <div class="grid-item" onclick="showCard(this)">
+          <img id="item4" src="assets/loader.gif" />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="popup-card" class="popup-card">
+      <div class="popup-content">
+        <img id="popup-image" src="" alt="Popup Image" />
+        <div id="popup-prompt" class="popup-prompt"></div>
+        <button onclick="trynow()">Try Example !</button>
+      </div>
+    </div> -->
+    <div id="popup-card" class="popup-card">
+      <div class="popup-content">
+        <img id="popup-image" src="" alt="Popup Image" />
+        <div id="popup-prompt" class="popup-prompt"></div>
+        <div class="popup-buttons">
+          <button class="popup-download" onclick="downloadImage()">
+            Download
+          </button>
+          <button class="popup-share" onclick="shareImage()">Share</button>
+          <button class="popup-save" onclick="saveImage()">Save</button>
+          <button onclick="giveFeedback()">Feedback</button>
+        </div>
+        <button onclick="trynow()">Try Example!</button>
+      </div>
+    </div>
+
+    <script id="generate">load();</script>
+
+  </body>
+</html>

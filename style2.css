@@ -93,7 +93,6 @@ body {
 }
 
 img {
-  
   max-width: 100%;
   display: block;
 }
@@ -165,7 +164,6 @@ img {
   height: 100%;
   background: rgba(0, 0, 0, 0.373);
   color: white;
-  
 }
 
 .gallery-item:hover .text-overlay {
@@ -181,88 +179,6 @@ img {
   margin: 0;
   width: 80%;
 }
-.popup-card {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-.popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 450px;
-  height: fit-content;
-  overflow: auto;
-  background-color: whitesmoke;
-  border-radius: 14px;
-  -webkit-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-.popup-card img {
-  width: 100%;
-  max-width: 500px;
-  max-height: 500px;
-}
-.popup-prompt {
-  color: #000000aa;
-  font-size: 20px;
-  margin: 20px;
-  text-align: center;
-  word-wrap: break-word;
-  max-width: 500px;
-  max-height: 500px;
-  background-color: whitesmoke;
-  overflow: hidden;
-}
-.popup-card button {
-  color: rgba(0, 0, 0, 0.821);
-  background-color: #ececf1;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 15px;
-  width: 75%;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-family: Helvetica, sans-serif;
-}
-.popup-card button:hover {
-  background-color: #ececf1c2;
-}
-.popup-active .gallery-item {
-  filter: none;
-  transform: none;
-  /* other rules to disable the effects */
-}
-.popup-active .text-overlay {
-  display: none;
-  /* other rules to disable the effects */
-}
-.popup-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-.popup-download {
-  margin-right: 5px;
-}
-.popup-share {
-  margin-right: 5px;
-}
-.popup-save {
-  margin-right: 5px;
-}
-
 
 /* /* ------------------------------------------------------- Loading -------------------------------* / */
 
@@ -276,7 +192,6 @@ img {
   display: none;
   justify-content: center;
   align-items: center;
-
 }
 
 #loading-screen {
@@ -299,34 +214,47 @@ img {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #loader {
-
   margin-top: 0px;
   font-size: 20px;
   margin-top: 20px;
   opacity: 0;
   transform: translateY(-20px);
-  animation: fade-in 0.8s cubic-bezier(0.42, 0, 0.21, 1) forwards, slide-up 0.8s cubic-bezier(0.42, 0, 0.21, 1) forwards;
+  animation: fade-in 0.8s cubic-bezier(0.42, 0, 0.21, 1) forwards,
+    slide-up 0.8s cubic-bezier(0.42, 0, 0.21, 1) forwards;
 }
 
 @keyframes slide-in {
-  from { transform: translateY(-100px); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { transform: translateY(-20px); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
-
 
 /* ------------------------------------------------------- Grid ------------------------------- */
 
@@ -338,7 +266,6 @@ img {
 }
 
 .grid-container {
-
   margin-top: -110px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -361,3 +288,103 @@ img {
   max-height: 250px;
   object-fit: cover;
 }
+
+/* ------------------------------------------------------- pop up ------------------------------- */
+.popup-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: fit-content;
+  overflow: auto;
+  background-color: whitesmoke;
+  border-radius: 14px;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.popup-card img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.popup-prompt {
+  color: #000000aa;
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 500px;
+  max-height: 500px;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.popup-card button {
+  color: rgba(0, 0, 0, 0.821);
+  background-color: #ececf1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  width: 75%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: Helvetica, sans-serif;
+  
+}
+
+.popup-card button:hover {
+  background-color: #ececf1c2;
+}
+
+.popup-active .gallery-item {
+  filter: none;
+  transform: none;
+  /* other rules to disable the effects */
+}
+
+.popup-active .text-overlay {
+  display: none;
+  /* other rules to disable the effects */
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.popup-download {
+  margin-right: 5px;
+  background-color: #f8d7da; /* red background color */
+}
+
+.popup-share {
+  margin-right: 5px;
+  background-color: #d4edda; /* green background color */
+}
+
+.popup-save {
+  margin-right: 5px;
+  background-color: #cce5ff; /* blue background color */
+}
+
+

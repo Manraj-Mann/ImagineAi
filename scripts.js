@@ -17,6 +17,7 @@ function masonryLayout(containerElement, itemsElement, columns) {
   columnsElements.forEach(column => containerElement.appendChild(column));
 }
 
+var search_item;
 
 function showCard(card) {
 
@@ -50,6 +51,7 @@ document.addEventListener("click", function (event) {
 });
 
 
+
 function trynow() {
 
   const popupPrompt = document.getElementById("popup-prompt");
@@ -58,10 +60,26 @@ function trynow() {
   const searchbar = document.getElementById("search-input");
   searchbar.value = prompt;
   searchbar.focus();
+  search_item = prompt;
   hideCard();
 
 }
-
+function checkURL(url) {
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        console.log('URL is valid'); // or take appropriate action
+        return true;
+      } else {
+        console.log('URL is invalid'); // or take appropriate action
+        return false;
+      }
+    })
+    .catch(error => {
+      console.log('URL is invalid'); // or take appropriate action
+      return false;
+    });
+}
 function run() {
   // Creating our request object
   const url = 'https://manraj.pythonanywhere.com/images';
@@ -73,31 +91,38 @@ function run() {
       console.log(data);
       try {
 
-
+        data.reverse();
+        data = shuffleArray(data);
         data.forEach(element => {
 
           console.log(element);
-          const div = document.createElement("div");
-          div.classList.add("gallery-item");
-          div.setAttribute("onclick", "showCard(this)");
 
-          const img = document.createElement("img");
-          img.classList.add("gallery__img");
-          img.setAttribute("src", element.imageUrl);
-          img.setAttribute("alt", "");
+          // if (checkURL(element.imageUrl) == true) {
+
+            const div = document.createElement("div");
+            div.classList.add("gallery-item");
+            div.setAttribute("onclick", "showCard(this)");
+
+            const img = document.createElement("img");
+            img.classList.add("gallery__img");
+            img.setAttribute("src", element.imageUrl);
+            img.setAttribute("alt", "");
 
 
-          const textOverlay = document.createElement('div');
-          textOverlay.classList.add('text-overlay');
-          const textOverlayText = document.createElement('p');
-          textOverlayText.setAttribute('color', 'white');
-          textOverlayText.innerText = element.prompt;
-          textOverlay.appendChild(textOverlayText);
+            const textOverlay = document.createElement('div');
+            textOverlay.classList.add('text-overlay');
+            const textOverlayText = document.createElement('p');
+            textOverlayText.setAttribute('color', 'white');
+            textOverlayText.innerText = element.prompt;
+            textOverlay.appendChild(textOverlayText);
 
-          div.appendChild(textOverlay);
-          div.appendChild(img);
-          gallery.appendChild(div);
+            div.appendChild(textOverlay);
+            div.appendChild(img);
+            gallery.appendChild(div);
+          // }
+
         });
+
 
       } catch (error) {
         console.log(error);
@@ -110,3 +135,23 @@ function run() {
 }
 
 run();
+
+function generate() {
+
+  const search = document.getElementById("search-input");
+  window.location.href = "generate_image.html?search=" + search.value;
+
+
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    // Generate a random index between 0 and i (inclusive)
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Swap the elements at i and j
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+}
